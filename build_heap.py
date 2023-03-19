@@ -24,7 +24,7 @@ def sort_Butt(data, i, swaps):
     if(MI!=i):
         swaps.append((i,MI))
         data[i],data[MI]=data[MI],data[i]
-        sort_Butt(data,MI,swaps)
+        swap = sort_Butt(data,MI,swaps)
 
 def main():
     
