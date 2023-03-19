@@ -32,12 +32,7 @@ def main():
     # add another input for I or F 
     # first two tests are from keyboard, third test is from a file
     Che = input()
-    if "I" in Che:
-        n = int(input())
-        data = list(map(int, input().split()))
-        assert len(data) == n
-        swaps = build_heap(data)
-    elif "F" in Che:
+    if "F" in Che:
         FN = input()
         if "a" in FN:
             return
@@ -47,6 +42,11 @@ def main():
                 data = list(map(int, f.readline().split()))
                 assert len(data) == n
                 swaps = build_heap(data)
+    elif "I" in Che:
+        n = int(input())
+        data = list(map(int, input().split()))
+        assert len(data) == n
+        swaps = build_heap(data)
     else:
         return
 
