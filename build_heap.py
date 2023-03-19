@@ -6,7 +6,7 @@ def build_heap(data):
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
     n=len(data)
-    for i in range(n//2-1,-1,-1):
+    for i in range(n//2,-1,-1):
         sort_Butt(data,i,swaps)
 
     return swaps
@@ -17,14 +17,15 @@ def sort_Butt(data, i, swaps):
     LCh = 2*i+1
     RCH = 2*i+2
 
-    if(RCH<=n-1 and data[RCH]<data[MI]):
+    if(RCH<n and data[RCH]<data[MI]):
         MI = RCH
-    if(LCh<=n-1 and data[LCh]<data[MI]):
+    if(LCh<n and data[LCh]<data[MI]):
         MI = LCh
-    if(MI!=i):
+    if(i!=MI):
         swaps.append((i,MI))
         data[i],data[MI]=data[MI],data[i]
-        swap = sort_Butt(data,MI,swaps)
+        sort_Butt(data,MI,swaps)
+        return
 
 def main():
     
