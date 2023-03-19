@@ -42,7 +42,7 @@ def main():
         if "a" in FN:
             return
         else:
-            with open("./tests/"+FN,encoding = 'utf-8') as f:
+            with open("./tests/"+FN,'r') as f:
                 n = int(f.readline())
                 data = list(map(int, f.readline().split()))
                 assert len(data) == n
